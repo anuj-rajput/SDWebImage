@@ -114,6 +114,18 @@
                  completed:(nullable SDExternalCompletionBlock)completedBlock NS_REFINED_FOR_SWIFT;
 
 /**
+ Set the imageView `image` with an `url`, placeholder.
+ The download is asynchronous and cached.
+ 
+ @param url The url for the image.
+ @param inColor Background Color for Placeholder
+ @param completedBlock A block called when operation has been completed. This block has no return value and takes the requested UIImage as first parameter. In case of error the image
+ */
+- (void)sd_setImageWithURL:(NSURL *)url
+          placeholderColor:(UIColor *)inColor
+                 completed:(SDWebImageCompletionBlock)completedBlock;
+
+/**
  * Set the imageView `image` with an `url`, placeholder and custom options.
  *
  * The download is asynchronous and cached.
@@ -131,6 +143,20 @@
           placeholderImage:(nullable UIImage *)placeholder
                    options:(SDWebImageOptions)options
                  completed:(nullable SDExternalCompletionBlock)completedBlock;
+
+/**
+ Set the imageView `image` with an `url`, placeholder.
+ The download is asynchronous and cached.
+ 
+ @param url The url for the image.
+ @param inColor Background Color for Placeholder
+ @param options The options to use when downloading the image. @see SDWebImageOptions for the possible values.
+ @param completedBlock A block called when operation has been completed. This block has no return value and takes the requested UIImage as first parameter. In case of error the image
+ */
+- (void)sd_setImageWithURL:(NSURL *)url
+          placeholderColor:(UIColor *)inColor
+                   options:(SDWebImageOptions)options
+                 completed:(SDWebImageCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
